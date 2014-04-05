@@ -71,7 +71,13 @@ while True:
 	ethernet_protocol = socket.ntohs(eth[2])
 	
 	protocolName = socket.ntohs(eth[2])
-
+	
+	source_address = socket.inet_ntoa(ip_header_unpack[8]);
+	
+	destination_address = socket.inet_ntoa(ip_header_unpack[9]);
+	
+	domain_address = socket.getfqdn(destination_address);
+	
 	if ethernet_protocol == 8:
 		
 		ip_header = packet_data[ethernet_length:20+ethernet_length]
@@ -87,9 +93,6 @@ while True:
 		packet_flags = ip_header_unpack[4]
 		protocol = ip_header_unpack[6]
 		checksum = ip_header_unpack[7]
-		source_address = socket.inet_ntoa(ip_header_unpack[8]);
-		destination_address = socket.inet_ntoa(ip_header_unpack[9]);
-		
 		print("																				")
 		print("																				")
 		print("\n---------------------------------Parsed Data---------------------------------")
@@ -105,6 +108,7 @@ while True:
 		print'Checksum:\t\t' + str(checksum)
 		print'Source Address:\t\t' + str(source_address)
 		print'Destination Address:\t' + str(destination_address)
+		print'Domain Address:\t\t' + socket.getfqdn(destination_address)
 		
 		#TCP Protocol
 		if ethernet_protocol == 6:
@@ -181,5 +185,4 @@ while True:
 		
 		else:
 			print 'Identified Protocol:    ' + protocol_mapper.getProtocol(protocolName)
-			
 		print
