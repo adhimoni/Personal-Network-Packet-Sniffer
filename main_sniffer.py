@@ -7,7 +7,7 @@ import protocol_mapper
 import type_of_service
 import packet_flags_mapper
 import socket
-import struct#FFFFFF
+import struct
 import sys
 import datetime
 
