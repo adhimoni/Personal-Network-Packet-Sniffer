@@ -129,7 +129,7 @@ while True:
 		    print 'Source MAC:\t\t' + ethernet_address(packet_data[6:12]) 
 		    print 'TCP, Transmission Control Protocol'
 		    print 'Source Port :\t\t' + str(source_port)
-		    print 'Destination Port :\t' + str(dest_port)
+		    print 'Destination Port :\t' + str(destination_port)
 		    print 'Sequence Number :\t' + str(sequence)
 		    print 'Acknowledgement :\t' + str(acknowledgement)
 		    print 'TCP header length :\t' + str(tcp_header_length)
