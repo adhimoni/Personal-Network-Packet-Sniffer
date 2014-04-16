@@ -20,4 +20,5 @@ def getPacket_Flags(packet_data):
 
     	tab_format = '\n\t\t\t'
     	packet_flags = flag_ReservedBit[ReservedBit] + tab_format + flag_BinaryYorN[BinaryYorN] + tab_format + flag_MoreFragments[MoreFragments]
+    	
     	return packet_flags

@@ -3,6 +3,7 @@
 #Extraction of Type of Service, i.e. TOS generally 8-bits
 
 def getType_Of_Service(packet_data):
+	
 	precedence = {0: "Routine", 1: "Priority", 2: "Immediate", 3: "Flash", 4: "Flash override", 5: "CRITIC/ECP", 6: "Internetwork control", 7: "Network control"}
 	delay = {0: "Normal delay", 1: "Low delay"}
 	throughput = {0: "Normal throughput", 1: "High throughput"}
